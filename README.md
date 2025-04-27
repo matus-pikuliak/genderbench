@@ -233,6 +233,10 @@ study which genders tend to win for different occupations. [Documentation](https
 - `DiversityMedQa` - The model answers multiple choice medical questions. We
 study the accuracy of answers for patients with different genders. [Documentation](https://genderbench.readthedocs.io/latest/probes/diversitymedqa.html).
 
+- `GestTranslation` - The model is asked which version of a translated English
+sentence it prefers - a translation using the male or the female gender. The
+sentences are associated with various gender stereotypes. We study the model's
+preference of the male vs. female gender in the translation. [Documentation](https://genderbench.readthedocs.io/en/latest/probes/gest_translation.html).
 
 ### Creative Writing
 

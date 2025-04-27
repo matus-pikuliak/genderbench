@@ -8,6 +8,7 @@ from genderbench.probes import (
     DreadditProbe,
     GestCreativeProbe,
     GestProbe,
+    GestTranslationProbe,
     HiringAnProbe,
     HiringBloombergProbe,
     InventoriesProbe,
@@ -167,6 +168,15 @@ def test_business_vocabulary():
     print(probe.__class__, probe.metrics, end="\n\n")
     assert abs(probe.metrics["bsri_male"] - 1 / 3) < 0.03
     assert abs(probe.metrics["mean_diff"]) < 0.03
+
+
+def test_gest_translation():
+    generator = RandomGenerator(["(a)", "definitely (a)", "(b)", "..."])
+    probe = GestTranslationProbe(calculate_cis=False, log_strategy="no")
+    probe.run(generator)
+    print(probe.__class__, probe.metrics, end="\n\n")
+    assert abs(probe.metrics["masculine_rate"] - 1 / 2) < 0.03
+    assert abs(probe.metrics["stereotype_rate"]) < 0.05
 
 
 def test_marks():

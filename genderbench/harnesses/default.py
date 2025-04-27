@@ -7,6 +7,7 @@ from genderbench.probes import (
     DreadditProbe,
     GestCreativeProbe,
     GestProbe,
+    GestTranslationProbe,
     HiringAnProbe,
     HiringBloombergProbe,
     InventoriesProbe,
@@ -38,6 +39,7 @@ class DefaultHarness(Harness):
             ),
             IsearProbe(),
             JobsLumProbe(num_repetitions=5),
+            GestTranslationProbe(),
             RelationshipLevyProbe(sample_k=3_000),
         ]
         super().__init__(probes=probes, **kwargs)
